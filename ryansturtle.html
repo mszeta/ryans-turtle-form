@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorite Turtle Survey</title>
+    <script>
+        function showInput(event) {
+            event.preventDefault(); // Prevents page refresh
+            let turtle = document.getElementById("turtle").value;
+            let reason = document.getElementById("reason").value;
+            let love = document.getElementById("love").value;
+            
+            document.getElementById("result").innerHTML = 
+                `<p><strong>Favorite Turtle:</strong> ${turtle}</p>
+                 <p><strong>Why?:</strong> ${reason}</p>
+                 <p><strong>Do you know how much Zeta loves you?</strong> ${love}</p>`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Answer These Questions!</h1>
+    <form onsubmit="showInput(event)">
+        <label for="turtle">Who is your favorite turtle?</label><br>
+        <input type="text" id="turtle" name="turtle"><br><br>
+
+        <label for="reason">Why is that turtle your favorite?</label><br>
+        <textarea id="reason" name="reason"></textarea><br><br>
+
+        <label for="love">Do you know how much Zeta loves you?</label><br>
+        <input type="text" id="love" name="love"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Your Answers:</h2>
+    <div id="result"></div>
+</body>
+</html>
